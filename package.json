@@ -1,0 +1,15 @@
+{
+  "name": "pbot",
+  "version": "1.0.0",
+  "description": "Pregnancy Bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Tim Romanowski",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.9.1",
+    "restify": "^5.2.0"
+  }
+}
