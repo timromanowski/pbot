@@ -2,9 +2,11 @@
   "name": "pbot",
   "version": "1.0.0",
   "description": "Pregnancy Bot",
+  "repository": "git@github.com:timromanowski/pbot.git",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+	"start": "node app.js"
   },
   "author": "Tim Romanowski",
   "license": "ISC",
