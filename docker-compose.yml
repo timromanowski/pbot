@@ -1,0 +1,26 @@
+version: '2'
+services:
+  bot:
+    build: .
+    container_name: "pbot"
+    env_file:
+      - '.env'
+    links:
+      - mongodb
+    depends_on:
+     - mongodb
+    ports:
+      - '3978:3978'    
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    env_file:
+      - '.env'
+    volumes:
+      - mongo:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+    
+volumes:
+  mongo:
