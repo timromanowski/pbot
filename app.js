@@ -1,6 +1,12 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-var mongoose = require('mongoose');
+
+var Dialogs = {
+    Intake: {
+        label: 'Intake',
+        dialog: require('./intake')
+    }
+};
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -19,5 +25,7 @@ server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
-    session.send("Kira saeeeid: %s", session.message.text);
+    session.beginDialog(Dialogs.Intake.label);
 });
+
+bot.dialog(Dialogs.Intake.label, Dialogs.Intake.dialog);

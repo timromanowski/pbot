@@ -11,8 +11,13 @@
   "author": "Tim Romanowski",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "botbuilder": "^3.9.1",
+    "dotenv-extended": "^2.0.1",
     "mongoose": "^4.11.9",
     "restify": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0"
   }
 }
