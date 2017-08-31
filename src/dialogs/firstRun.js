@@ -1,5 +1,7 @@
 const consts = require('../helpers/consts');
 
 module.exports = (session) => {
-    session.beginDialog('/setTimezone', { prompt: consts.Prompts.FIRST_RUN });
+    session.send("greeting");
+    session.send("instructions");
+    session.beginDialog('/localePicker');    
 };

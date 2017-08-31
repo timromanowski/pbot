@@ -25,7 +25,11 @@ const connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-const bot = new builder.UniversalBot(connector);
+const bot = new builder.UniversalBot(connector, {
+    localizerSettings: { 
+        defaultLocale: "en" 
+    }
+});
 
 //=========================================================
 // Bots Middleware
@@ -58,6 +62,7 @@ bot.dialog('/setDatetime', dialogs.setDatetime);
 bot.dialog('/setTimezone', dialogs.setTimezone);
 bot.dialog('/showTimezone', dialogs.showTimezone);
 bot.dialog('/showReminders', dialogs.showReminders);
+bot.dialog('/localePicker', dialogs.localePicker);
 bot.dialog('/help', dialogs.help).triggerAction({ matches: /^help/i });
 
 //=========================================================

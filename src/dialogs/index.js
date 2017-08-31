@@ -7,3 +7,4 @@ exports.setDatetime = require('./setDatetime');
 exports.setTimezone = require('./setTimezone');
 exports.showReminders = require('./showReminders');
 exports.showTimezone = require('./showTimezone');
+exports.localePicker = require('./localePicker');
