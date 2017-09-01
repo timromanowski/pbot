@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
         },
         user: { 
             name: { type: String, index: true }, 
-            id: String 
+            id: String, 
+            preferredLocale: String
         },
         channelId: String,
         id: String
