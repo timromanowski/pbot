@@ -5,12 +5,12 @@ const User = require('../models/user');
 module.exports = {
     findUser: (session) => {
         return new Promise(function (resolve) {
-            User.findOne({ 'user_address.user.id': session.message.address.user.id }, (err, user) => {
+            User.findOne({ 'user_address.user.id': session.message.address.user.id }, (err, user) => {   
               if (err !== null || user === null) {
                 // new user 
                 user = {
                     user_address: session.message.address,
-                    last_session_date : new Date()
+                    last_session_date : new Date()                    
                 };  
                 User.create(user, err => {
                     if (err !== null) {

@@ -2,22 +2,16 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
     user_address: {
-        useAuth: Boolean,
-        serviceUrl: String,
-        bot: { 
-            name: String, 
-            id: String 
-        },
-        conversation: { 
-            id: String, 
-            isGroup: Boolean 
-        },       
+        id: String,
         channelId: String,
-        id: String       
+        user: { id: String, name: String },
+        conversation: { id: String },
+        bot: { id: String, name: String },
+        serviceUrl: String
     },
-    name: { type: String, index: true }, 
+    name: { type: String, index: true },
     preferred_locale: String,
     age: Number
-}, { timestamps: true } );
+}, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

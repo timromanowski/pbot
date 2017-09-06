@@ -4,6 +4,7 @@ const store = require('../store')
 
 module.exports = (session) => {
     store.findUser(session).then((user) => {
+        console.log(user)
         if(!user.preferred_locale){
             session.send("greeting");
             session.send("instructions");
