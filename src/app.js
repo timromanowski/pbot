@@ -3,18 +3,19 @@ const builder = require('botbuilder');
 const mongoose = require('mongoose');
 const consts = require('./helpers/consts');
 const dialogs = require('./dialogs');
+const config = require('../config');
 const createReminderProcessor = require('./helpers/reminderProcessor');
 
 //=========================================================
 // MongoDB Setup
 //=========================================================
 
-//mongoose.connect(process.env.MONGO_URI || config.MONGO_URI, err => {
-//    if (err) {
-//        return console.error(err);
-//    }
-//    console.log("Connected to MongoDB");
-//});
+mongoose.connect(process.env.MONGO_URI || config.MONGO_URI, err => {
+   if (err) {
+       return console.error(err);
+   }
+   console.log("Connected to MongoDB");
+});
 
 //=========================================================
 // Bot Setup

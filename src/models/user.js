@@ -11,15 +11,13 @@ const userSchema = new mongoose.Schema({
         conversation: { 
             id: String, 
             isGroup: Boolean 
-        },
-        user: { 
-            name: { type: String, index: true }, 
-            id: String, 
-            preferredLocale: String
-        },
+        },       
         channelId: String,
-        id: String
-    }    
-});
+        id: String       
+    },
+    name: { type: String, index: true }, 
+    preferred_locale: String,
+    age: Number
+}, { timestamps: true } );
 
 module.exports = mongoose.model('User', userSchema);
